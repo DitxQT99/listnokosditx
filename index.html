@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DITXA NOKOS LIST - List Nomor Kosong Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Tombol Help di pojok kanan atas -->
+    <a href="#" id="helpBtn" class="help-btn">
+        <i class="fas fa-headset"></i> Butuh Bantuan?
+    </a>
+    
+    <!-- Chat Container -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <div class="chat-title">
+                <i class="fas fa-headset"></i> DITXA SUPPORT
+            </div>
+            <button class="close-chat" id="closeChat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <!-- Pesan default dari admin -->
+            <div class="message admin-message">
+                <div class="message-sender">ADMIN DITXA</div>
+                <div class="message-content">Halo! Ada yang bisa saya bantu? Silakan tulis pesan Anda di sini.</div>
+                <div class="message-time">Baru saja</div>
+            </div>
+        </div>
+        
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Ketik pesan Anda...">
+            <button class="send-btn" id="sendMessage">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+        <div class="sending-indicator" id="sendingIndicator">
+            <span class="loading-spinner"></span> Mengirim pesan...
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">DITXA NOKOS LIST</div>
+            <div class="subtitle">List Nomor Kosong / Nokos Terlengkap & Terupdate</div>
+            <div class="premium-tag">
+                <i class="fas fa-star"></i> PREMIUM SERVICE
+            </div>
+        </header>
+        
+        <div class="note-box">
+            <div class="note-title">
+                <i class="fas fa-info-circle"></i>
+                INFORMASI PENTING:
+            </div>
+            <ul class="note-list">
+                <li>FREE TUTOR SAVE NOKOS - PANDUAN LENGKAP GRATIS</li>
+                <li>KODE HANYA 1X VERIF DALAM WAKTU 20 MENIT</li>
+                <li>HARGA BISA BERUBAH SETIAP PEMBELIAN</li>
+                <li>NOKOS TERGANTUNG STOCK - TANYAKAN KETERSEDIAAN</li>
+                <li>JIKA NOKOS KENON/LOG OUT,TAPI SUDAH DITANGAN PEMBELI,JANGAN SALAHKAN ADMIN!</li>
+                <li>DITX JUGA MENYEDIAKAN PRODUK LAINNYA - Tanyakan saja!</li>
+            </ul>
+        </div>
+        
+        <div class="country-list">
+            <div class="sort-container">
+                <span class="sort-label"><i class="fas fa-filter"></i> Filter Negara:</span>
+                <select class="sort-select" id="sortOption">
+                    <option value="default"> Urutan Default</option>
+                    <option value="price-high">Harga Tertinggi</option>
+                    <option value="price-low">Harga Terendah</option>
+                    <option value="name-az">Nama Negara (A-Z)</option>
+                    <option value="name-za">Nama Negara (Z-A)</option>
+                </select>
+            </div>
+            
+            <div class="country-header">
+                <div>NEGARA</div>
+                <div>HARGA</div>
+            </div>
+            
+            <div class="country-rows" id="countryRows">
+                <div class="country-row" data-name="Indonesia" data-min-price="5000" data-max-price="6000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Indonesia
+                        <span class="label best-seller">Best Seller</span>
+                    </div>
+                    <div class="country-price">Rp 5.000 - 6.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Malaysia" data-min-price="10000" data-max-price="20000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Malaysia
+                    </div>
+                    <div class="country-price">Rp 10.000 - 20.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Rusia" data-min-price="17000" data-max-price="55000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Rusia
+                    </div>
+                    <div class="country-price">Rp 17.000 - 55.000</div>
+                </div>
+                
+                <div class="country-row" data-name="China" data-min-price="18000" data-max-price="25000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> China
+                    </div>
+                    <div class="country-price">Rp 18.000 - 25.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Francis" data-min-price="150000" data-max-price="190000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Francis
+                    </div>
+                    <div class="country-price">Rp 150.000 - 190.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Australia" data-min-price="250000" data-max-price="1340000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Australia
+                    </div>
+                    <div class="country-price">Rp 250.000 - 1.340.000</div>
+                </div>
+                
+                <div class="country-row" data-name="India" data-min-price="28000" data-max-price="34000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> India
+                    </div>
+                    <div class="country-price">Rp 28.000 - 34.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Belanda" data-min-price="15000" data-max-price="90000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Belanda
+                    </div>
+                    <div class="country-price">Rp 15.000 - 90.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Turki" data-min-price="250000" data-max-price="300000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Turki
+                    </div>
+                    <div class="country-price">Rp 250.000 - 300.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Thailand" data-min-price="12000" data-max-price="25000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Thailand
+                    </div>
+                    <div class="country-price">Rp 12.000 - 25.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Inggris" data-min-price="20000" data-max-price="30000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Inggris
+                    </div>
+                    <div class="country-price">Rp 20.000 - 30.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Kolombia" data-min-price="10000" data-max-price="20000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Kolombia
+                    </div>
+                    <div class="country-price">Rp 10.000 - 20.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Jerman" data-min-price="120000" data-max-price="150000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Jerman
+                        <span class="label hot">Hot</span>
+                    </div>
+                    <div class="country-price">Rp 120.000 - 150.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Filipina" data-min-price="6000" data-max-price="13000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Filipina
+                        <span class="label best-seller">Viral</span>
+                    </div>
+                    <div class="country-price">Rp 6.000 - 13.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Brazil" data-min-price="19000" data-max-price="50000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Brazil
+                    </div>
+                    <div class="country-price">Rp 19.000 - 50.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Jepang" data-min-price="190000" data-max-price="1050000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Jepang
+                    </div>
+                    <div class="country-price">Rp 190.000 - 1.050.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Bhutan" data-min-price="8000" data-max-price="17000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Bhutan
+                    </div>
+                    <div class="country-price">Rp 8.000 - 17.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Kazakhstan" data-min-price="37000" data-max-price="150000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Kazakhstan
+                    </div>
+                    <div class="country-price">Rp 37.000 - 150.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Poland" data-min-price="15000" data-max-price="20000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Poland
+                    </div>
+                    <div class="country-price">Rp 15.000 - 20.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Africa" data-min-price="5000" data-max-price="10000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Africa
+                    </div>
+                    <div class="country-price">Rp 5.000 - 10.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Chile" data-min-price="7000" data-max-price="15000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Chile
+                    </div>
+                    <div class="country-price">Rp 7.000 - 15.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Ukraine" data-min-price="10000" data-max-price="30000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Ukraine
+                    </div>
+                    <div class="country-price">Rp 10.000 - 30.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Kroasia" data-min-price="20000" data-max-price="90000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Kroasia
+                    </div>
+                    <div class="country-price">Rp 20.000 - 90.000</div>
+                </div>
+                
+                <div class="country-row" data-name="USA" data-min-price="11000" data-max-price="120000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> USA
+                    </div>
+                    <div class="country-price">Rp 11.000 - 120.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Finlandia" data-min-price="35000" data-max-price="100000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Finlandia
+                    </div>
+                    <div class="country-price">Rp 35.000 - 100.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Denmark" data-min-price="20000" data-max-price="90000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Denmark
+                    </div>
+                    <div class="country-price">Rp 20.000 - 90.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Singapore" data-min-price="90000" data-max-price="350000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Singapore
+                    </div>
+                    <div class="country-price">Rp 90.000 - 350.000</div>
+                </div>
+                
+                <div class="country-row" data-name="Cambodia" data-min-price="15000" data-max-price="30000">
+                    <div class="country-name">
+                        <i class="fas fa-flag"></i> Cambodia
+                    </div>
+                    <div class="country-price">Rp 15.000 - 30.000</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="payment-section">
+            <h2 class="section-title">METODE PEMBAYARAN</h2>
+            <div class="section-subtitle">Pilih metode pembayaran yang tersedia untuk transaksi cepat dan aman</div>
+            
+            <div class="payment-buttons">
+                <button class="payment-btn dana-btn">
+                    <i class="fas fa-wallet"></i> Dana
+                </button>
+                
+                <button class="payment-btn gopay-btn">
+                    <i class="fab fa-google-pay"></i> Gopay
+                </button>
+                
+                <button class="payment-btn qris-btn">
+                    <i class="fas fa-qrcode"></i> QRIS
+                </button>
+            </div>
+        </div>
+        
+        <div class="owner-section">
+            <a href="https://t.me/ditxstur" target="_blank" class="owner-btn">
+                <i class="fab fa-telegram"></i> HUBUNGI OWNER (t.me/ditxstur)
+            </a>
+        </div>
+        
+        <div class="contact-section">
+            <a href="#" class="contact-btn">
+                <i class="fab fa-whatsapp"></i> WhatsApp Support
+            </a>
+            
+            <a href="https://t.me/Maoduitduitduitduit" target="_blank" class="contact-btn">
+                <i class="fab fa-telegram"></i> Testimoni DITX
+            </a>
+        </div>
+        
+        <footer>
+            <div class="footer-logo">DITXA NOKOS</div>
+            <p>&copy; 2025 DITXA NOKOS LIST - List Nomor Kosong Premium</p>
+            <p>listNokosByDitxa</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
