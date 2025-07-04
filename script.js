@@ -224,4 +224,4 @@ document.addEventListener('DOMContentLoaded', function() {
             countryRowsContainer.appendChild(row);
         });
     }
-});
+});});
